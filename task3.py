@@ -134,4 +134,15 @@ print('\n\n')
 
 print('#13')
 
+strlen = [12, 32, 30, 41, 42]
+index = 0
+while index < len(strlen):
+    if strlen[index] % 2 == 0:
+        strlen.insert(index + 1, int(str(strlen[index])[::-1]))
+        index += 2
+    else:
+        index += 1
+print(strlen)
+
+print('\n\n')
 print('\n\n')
