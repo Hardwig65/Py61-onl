@@ -1,125 +1,103 @@
-# 1
-# class Math:
-#     def __init__(self, num, num2):
-#         self.num = num
-#         self.num2 = num2
+# # 1
+# class Mathematics:
+#     def __init__(self, number_1=2, number_2=3):
+#         self.number_1 = number_1
+#         self.number_2 = number_2
 #
-#     def Display(self):
-#         print(f'Число 1 = {self.num}, Число 2 = {self.num2}')
+#     def monitor(self):
+#         print(f"Число один будет:{self.number_1} \n"
+#               f"Числом два будет:{self.number_2}")
 #
-#     def Numbers_sum(self):
-#         print(f'Numbers_sum = {self.num + self.num2}')
+#     def number_change(self, new_number1, new_number2):
+#         self.number_1 = new_number1
+#         self.number_2 = new_number2
+#         print('numbers changed')
+#         self.monitor()
 #
-#     def Numbers_max(self):
-#         print(f'Numbers_max = {max(self.num, self.num2)}')
+#     def math_sum(self):
+#         return self.number_1 + self.number_2
 #
-#     def Numbers_update(self, new_num, new_num2):
-#         self.num = new_num
-#         self.num2 = new_num2
+#     def math_max(self):
+#         return max(self.number_1, self.number_2)
 #
-#
-# numbers = Math(10, 20)
-#
-# numbers.Display()
-# numbers.Numbers_sum()
-# numbers.Numbers_max()
-# numbers.Numbers_update(100, 200)
-# numbers.Display()
+
 # 2
 # class Counter:
-#     def __init__(self, Counter_range, start_number=0):
-#         self.start_number = start_number
-#         self.Counter_range = Counter_range
+#     def __init__(self, counter_start=0, counter_end=10):
+#         self.counter_start = counter_start
+#         self.counter_end = counter_end
 #
-#     def increase(self):
-#         if self.start_number < self.Counter_range:
-#             self.start_number += 1
-#             print("Counter increased by 1")
+#     def counter_display(self):
+#         print(f"counter in {self.counter_start}")
 #
-#     def decrease(self):
-#         if self.start_number > 0:
-#             self.start_number -= 1
-#             print("Counter decreased by 1")
+#     def counter_increment(self):
+#         self.counter_start += 1
+#         print("Incremented counter")
 #
-#     def Counter_position(self):
-#         print(f"Counter position = {self.start_number}")
+#     def counter_decrement(self):
+#         self.counter_start -= 1
+#         print("Decremented counter")
 #
 #
-# number = Counter(10)
-# number.increase()
-# number.Counter_position()
-# number.decrease()
-# number.Counter_position()
+# counter = Counter()
+# counter.counter_display()
+# counter.counter_increment()
+# counter.counter_increment()
+# counter.counter_display()
+
 # 3
 # class Shop:
-#     def __init__(self, shelves: list):  # принимает начальный список продуктов
-#         self.shelves = shelves
+#     def __init__(self, Products_list=["Банан", 'Яблоко', "Груша"]):
+#         self.Products_list = Products_list
 #
-#     def add_product(self, product: str):
-#         if product.title() not in self.shelves:
-#             self.shelves.append(product.title())
-#             print(f'Product {product} added at shelves')
+#     def get_product_list(self):
+#         return self.Products_list
+#
+#     def product_find(self, Product_name):
+#         if Product_name.title() in self.Products_list:
+#             print(f"Yes, we have {Product_name}")
 #         else:
-#             print("This product already exists")
+#             print(f"No, we don't have {Product_name}")
+#             for Product in self.Products_list:
+#                 if Product_name.lower() in Product.lower():
+#                     print(f'maybe you meaning {Product}')
 #
-#     def remove_product(self, product: str):
-#         if product in self.shelves:
-#             self.shelves.remove(product)
-#         else:
-#             print("No such product on shelves")
+#     def product_add(self, Product):
+#         self.Products_list.append(Product.title())
 #
-#     def show_shelves(self):
-#         print(self.shelves)
-#
-#     def product_find(self, name: str):
-#         for i in self.shelves:
-#             if name.lower() in i.lower():
-#                 print(f'Product {i} found')
-#                 return
-#         else:
-#             print("No such product on shelves")
+#     def product_remove(self, Product):
+#         self.Products_list.remove(Product.title())
 #
 #
-# Market = Shop(['Банан', 'Груша', 'Яблоки'])
-# Market.add_product('бАнан')
+# s = Shop()
 #
-# Market.product_find('бан')
-#
-# Market.show_shelves()
-# 4
-# class MoneyBox:
-#
-#     def __init__(self, capacity, monets=0):
-#         self.capacity = capacity
-#         self.monets = monets
-#
-#     def can_add(self, v):
-#         if 0 <= self.monets + v <= self.capacity:
-#             return True
-#         else:
-#             return False
-#
-#     def add(self, v):
-#         if self.can_add(v):
-#             self.monets += v
-#             print('monets added')
-#         else:
-#             print('not enough capacity')
-#
-#     def display(self):
-#         print(f'your monets = {self.monets}')
-#
-#     def can_add_check(self, v):
-#         if self.can_add(v):
-#             print(f'You can add {v} monets')
-#         else:
-#             print(f'Not enough capacity for {v} monets')
-#
-#
-# m = MoneyBox(10)
-# m.display()
-# m.add(5)
-# m.display()
-# m.add(5)
-# m.display()
-# m.can_add_check(1)
+# s.product_find('анан')
+# s.product_add("аРБУЗ")
+# print(s.get_product_list())
+# s.product_remove('АРБУЗ')
+# print(s.get_product_list())
+class MoneyBox:
+    def __init__(self, capacity):
+        self.capacity = capacity
+        self._current_coins = 0
+
+    def can_add(self, v):
+        if self.capacity >= v + self._current_coins:
+            return True
+
+    def Box_info(self):
+        print(f'{self._current_coins} coins left')
+
+    def add(self, v):
+        if self.can_add(v):
+            self._current_coins += v
+            print(f'added {v}')
+        else:
+            print('Cannot add')
+
+
+Box = MoneyBox(8)
+Box.add(7)
+Box.Box_info()
+Box.add(7)
+Box.Box_info()
