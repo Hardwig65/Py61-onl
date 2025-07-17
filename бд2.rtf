@@ -1,0 +1,147 @@
+{\rtf1\ansi\ansicpg1251\cocoartf2821
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fmodern\fcharset0 Courier;\f1\fmodern\fcharset0 Courier-Oblique;}
+{\colortbl;\red255\green255\blue255;\red103\green107\blue114;\red23\green23\blue26;\red195\green123\blue90;
+\red185\green101\blue173;\red174\green176\blue183;\red72\green151\blue245;\red38\green157\blue169;}
+{\*\expandedcolortbl;;\csgenericrgb\c40392\c41961\c44706;\csgenericrgb\c9020\c9020\c10196;\csgenericrgb\c76471\c48235\c35294;
+\csgenericrgb\c72549\c39608\c67843;\csgenericrgb\c68235\c69020\c71765;\csgenericrgb\c28235\c59216\c96078;\csgenericrgb\c14902\c61569\c66275;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww34360\viewh21600\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs32 \cf2 \cb3 -- select directors.name, directors.surname,movies.name_movie\
+-- from directors\
+-- inner join movies on directors.director_id = movies.director_id\
+--\
+-- select actors.name, actors.surname, movies.name_movie, directors.name, directors.surname\
+-- from actors\
+-- inner join actors_movies on actors.id = actors_movies.actors_id\
+-- inner join movies on actors_movies.movies_id = movies.movie_id\
+-- inner join directors on movies.director_id = directors.director_id\
+-- 2\
+-- alter table Bank_accounts add column finance int default null\
+-- 3\
+-- select directors.name, directors.surname, movies.name_movie, movies.budjet\
+--     from directors\
+-- inner join movies on directors.director_id = movies.director_id\
+-- group by movies.director_id\
+-- order by budjet desc\
+-- limit 10\
+--4\
+--\
+-- select name,surname,id\
+-- from Actors\
+-- inner join main.actors_movies am on Actors.id = am.actors_id\
+-- where id not in (select actors_movies.actors_id from actors_movies where actor_movie_id is not null)\
+--\
+-- select name,surname, director_id as id\
+-- from directors\
+-- where director_id not in (select director_id from movies where movies.director_id is not null)\
+-- union\
+-- select name,surname, id as id\
+-- from actors\
+-- where id not in(select actors_id from actors_movies where actors_movies.actors_id is not null)\
+\
+--5\
+-- select actors.name as actor_name,actors.surname as actor_surname, name_movie, budjet\
+-- from movies\
+-- inner join actors_movies on movies.movie_id = actors_movies.movies_id\
+-- inner join actors on actors_id = id\
+-- where budjet >= 150000000\
+\
+--6\
+-- select name,surname,movies.release, movies.name_movie\
+-- from directors\
+-- inner join movies on directors.director_id = movies.director_id\
+-- where movies.release <= 2000\
+-- group by name\
+\
+--7\
+-- insert into movies(name_movie, "release", budjet, director_id)\
+-- values ("Die Hard", 1988,300000000, null),\
+-- ("Catwoman", 2004, 100000000, null)\
+--\
+-- insert into actors_movies(movies_id, actors_id)\
+-- values(20,2),\
+--     (21,11)\
+\
+-- insert into movies(name_movie, "release", budjet, director_id)\
+-- values ("The King of Comedy", 1982,190000000, 16),\
+--        ("Eyes Wide Shut", 1999, 650000000, 17),\
+--        ("Manhattan", 1979, 100000000, 18)\
+--\
+-- insert into actors_movies(movies_id, actors_id)\
+-- values(22,null),\
+--       (23,null),\
+--       (24,null)\
+--\
+-- 8\
+-- alter table movies\
+-- add column rating int\
+--\
+--\
+-- UPDATE movies SET rating = 8.7 WHERE movie_id = 1;\
+-- UPDATE movies SET rating = 8.1 WHERE movie_id = 2;\
+-- UPDATE movies SET rating = 8.8 WHERE movie_id = 3;\
+-- UPDATE movies SET rating = 8.5 WHERE movie_id = 4;\
+-- UPDATE movies SET rating = 6.5 WHERE movie_id = 5;\
+-- UPDATE movies SET rating = 7.9 WHERE movie_id = 6;\
+-- UPDATE movies SET rating = 7.1 WHERE movie_id = 7;\
+-- UPDATE movies SET rating = 6.3 WHERE movie_id = 8;\
+-- UPDATE movies SET rating = 6.6 WHERE movie_id = 9;\
+-- UPDATE movies SET rating = 7.3 WHERE movie_id = 10;\
+-- UPDATE movies SET rating = 6.8 WHERE movie_id = 11;\
+-- UPDATE movies SET rating = 6.4 WHERE movie_id = 12;\
+-- UPDATE movies SET rating = 7.7 WHERE movie_id = 13;\
+-- UPDATE movies SET rating = 6.1 WHERE movie_id = 14;\
+-- UPDATE movies SET rating = 6.9 WHERE movie_id = 15;\
+-- UPDATE movies SET rating = 6.5 WHERE movie_id = 16;\
+-- UPDATE movies SET rating = 7.3 WHERE movie_id = 17;\
+-- UPDATE movies SET rating = 8.0 WHERE movie_id = 18;\
+-- UPDATE movies SET rating = 8.6 WHERE movie_id = 19;\
+-- UPDATE movies SET rating = 8.2 WHERE movie_id = 20;\
+-- UPDATE movies SET rating = 3.4 WHERE movie_id = 21;\
+-- UPDATE movies SET rating = 7.8 WHERE movie_id = 22;\
+-- UPDATE movies SET rating = 7.5 WHERE movie_id = 23;\
+-- UPDATE movies SET rating = 7.9 WHERE movie_id = 24;\
+\
+--9\
+-- select name,surname, name_movie, rating\
+-- from directors\
+-- inner join movies on directors.director_id = movies.director_id\
+-- where rating <= (select avg(rating) from movies)\
+\
+--10 \uc0\u1087 \u1086 \u1084 \u1086 \u1075 \u1072 \u1083  gpt, \u1087 \u1086 \u1090 \u1086 \u1084 \u1091  \u1095 \u1090 \u1086  \u1089 \u1082 \u1086 \u1083 \u1100 \u1082 \u1086  \u1103  \u1085 \u1077  \u1087 \u1099 \u1090 \u1072 \u1083 \u1089 \u1103  \u1076 \u1091 \u1084 \u1072 \u1090 \u1100 , \u1076 \u1086  \u1084 \u1077 \u1085 \u1103  \u1085 \u1077  \u1076 \u1086 \u1096 \u1083 \u1086 \
+-- select a.name,a.surname, a.id\
+-- from actors_movies am1\
+-- join actors_movies am2 on am1.movies_id = am2.movies_id and am1.actors_id != am2.actors_id\
+-- join actors a on a.id = am1.actors_id\
+-- GROUP BY am1.actors_id, a.name, a.surname\
+-- HAVING COUNT(DISTINCT am2.actors_id) >= 2;\
+\
+--11\
+-- select name,surname, name_movie, budjet\
+-- from Actors\
+-- inner join actors_movies on actors.id = actor_movie_id\
+-- inner join movies on actors_movies.movies_id = movies.movie_id\
+-- order by budjet desc\
+-- limit 5\
+\
+\cf4 select \cf5 name\cf6 ,\cf5 surname\cf6 ,Bank_accounts.\cf5 account_number\
+\cf4 from \cf6 Actors\
+\cf4 inner join \cf6 Bank_accounts \cf4 on \cf5 id \cf6 = Bank_accounts.\cf5 actors_id\
+\cf4 union\
+select \cf5 name\cf6 ,\cf5 surname\cf6 , Bank_accounts.\cf5 account_number\
+\cf4 from \cf6 directors\
+\cf4 inner join \cf6 Bank_accounts \cf4 on \cf6 directors.\cf5 director_id \cf6 = bank_accounts.\cf5 director_id\
+\
+\cf4 select  \cf6 movies.\cf5 name_movie \cf4 as \cf6 \uc0\u1085 \u1072 \u1079 \u1074 \u1072 \u1085 \u1080 \u1077 _\u1092 \u1080 \u1083 \u1100 \u1084 \u1072 , 
+\f1\i \cf7 count
+\f0\i0 \cf6 (Actors.\cf5 id\cf6 ) \cf4 as \cf6 \uc0\u1050 \u1086 \u1083 \u1080 \u1095 \u1077 \u1089 \u1090 \u1074 \u1086 _\u1072 \u1082 \u1090 \u1077 \u1088 \u1086 \u1074 \
+\cf4 from \cf6 actors\
+\cf4 inner join \cf6 actors_movies \cf4 on   \cf6 actors_movies.\cf5 actors_id \cf6 = actors.\cf5 id\
+\cf4 inner join \cf6 movies \cf4 on  \cf6 actors_movies.\cf5 movies_id \cf6 = movies.\cf5 movie_id\
+\cf4 where \cf5 "release" \cf6 >= \cf8 2000\
+\cf4 GROUP BY \cf6 movies.\cf5 name_movie\
+\cf4 HAVING 
+\f1\i \cf7 COUNT
+\f0\i0 \cf6 (actors.\cf5 id\cf6 ) > \cf8 1\
+}
