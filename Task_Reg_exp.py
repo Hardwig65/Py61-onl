@@ -48,3 +48,47 @@ import re
 #     if re.match(pattern=pattern, string=number):
 #         print(number)
 # 4
+# text = ("apple orange banana umbrella elephant tree igloo cloud avocado pear")
+# pattern = r"\b[aeoiu]\w+\b"
+# print(re.findall(pattern=pattern, string=text))
+# 5
+# text = "Температура сегодня -5 градусов, вчера была +3, а завтра ожидается -12 или 0 по прогнозу. Также возможны колебания до +15 и -20."
+# pattern = r"[+-]\d+"
+# print(re.findall(pattern=pattern, string=text))
+# 6
+# texts = [
+#     "The human mind is powerful.",
+#     "A human can adapt quickly.",
+#     "Many human inventions changed the world.",
+#     "Human human human"
+# ]
+# repl = 'computer'
+# pattern = 'human'
+# for text in texts:
+#     print(re.sub(pattern=pattern, repl=repl, string=text))
+# # 7
+# text = "Сегодня особенный день — 13-07-2025, запомни его."
+# pattern = r"\b\d\d-\d\d-\d{4}\b"
+# match = re.search(pattern, text)
+# print(match.group())
+# 8
+# text = "Bob bought a blue bike before breakfast but forgot basket."
+# pattern = r"\b\w{0,}b\w{0,}\b"
+# print(re.findall(pattern, text, re.IGNORECASE))
+# 9
+# texts = [
+#     "Heeellooo wooorld!!!",  # Повторы букв 'e', 'o', 'l' и '!'
+#     "Sooo maaaany leeeetters...",  # Много одинаковых подряд идущих букв
+#     "I looooveee Pythooon!",  # Повторы в "loveee" и "Pythooon"
+#     "Whaaaat??? Nooooo waaaaay!!!",  # Повторы 'a', 'o'
+#     "Noooo duplicates heeere...",  # Повторы в "Noooo", "heeere"
+#     "Yessss, I’m sureeeee.",  # Повторы в "Yessss" и "sureeeee"
+#     "Aaaarrrghhhh!!",  # Повторы 'a', 'r', 'g', 'h'
+#     "Coooool beaaans!",  # Повторы 'o', 'a'
+#     "Uuuuuh ohhhh...",  # Повторы 'u', 'h'
+#     "Missssisssssippiiii"  # Повторы в "Missssisssssippiiii"
+# ]
+# pattern = r'(\w)\1+'
+# repl = r"\1"
+# for text in texts:
+#     print(re.sub(pattern=pattern, string=text, repl=repl))
